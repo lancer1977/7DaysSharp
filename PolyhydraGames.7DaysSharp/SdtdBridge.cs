@@ -75,15 +75,7 @@ public class SdtdBridge(SdtdApiClient config)
         try
         {
             var result = await config.ExecuteConsoleCommandAsync(command);
-            if (result != null)
-            {
-                return result.Result;
-            }
-            else
-            {
-                throw new NullReferenceException(nameof(result));
-            }
-
+            return result.Result;
         }
         catch (Exception ex)
         {
