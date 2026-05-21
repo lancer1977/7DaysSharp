@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/PolyhydraGames.7DaysSharp/">
+    <Project Path="PolyhydraGames.7DaysSharp/PolyhydraGames.SdtdSharp.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/PolyhydraGames.SdtdSharp.Tests.csproj" />
+  </Folder>
+</Solution>
