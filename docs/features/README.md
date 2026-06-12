@@ -1,0 +1,7 @@
+# 7DaysSharp Features
+
+Feature documentation for 7DaysSharp is consolidated in the repository README for now.
+
+## Entry Points
+
+- [Repository README](../README.md)
