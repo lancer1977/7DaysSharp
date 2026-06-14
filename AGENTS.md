@@ -54,3 +54,4 @@ Follow the closest `AGENTS.md` first, then the workspace-root `AGENTS.md` when t
 ## Repo Notes
 
 - Add repo-specific commands, constraints, and validation steps below this line.
+- `Api.7DaysSharp` is a shared API package; start with `docs/README.md` and keep runtime/support ownership in the paired game-server repos.

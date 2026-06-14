@@ -1,5 +1,10 @@
 # 7DaysSharp
-A simple C# wrapper based on work by CatalysmsServerManager
+
+Shared API package and legacy wrapper for 7 Days to Die integrations.
+
+First read: [docs/README.md](./docs/README.md).
+
+A simple C# wrapper based on work by CatalysmsServerManager. Keep active runtime and support-home ownership in the paired game-server repos.
 ## Tags
 
 - dotnet
