@@ -29,3 +29,15 @@ scripts/smoke-package.sh
 `scripts/validate.sh` restores, builds, tests, and creates a local package smoke
 artifact. `scripts/smoke-package.sh` is the release/deploy smoke gate for this
 package repo.
+
+## Read-Only Diagnostics
+
+```csharp
+var config = new SdtdServerConfig("127.0.0.1", 8082, false, "admin", "token");
+var api = new SdtdApiClient(config, new HttpClient());
+var report = await new SdtdDiagnosticsProbe(api).CheckReadinessAsync();
+```
+
+The diagnostics probe calls only read-only endpoints: server info, stats, and
+allowed commands. It reports auth, HTTP, parse, timeout, and connection failures
+without issuing console commands.

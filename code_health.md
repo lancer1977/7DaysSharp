@@ -15,6 +15,8 @@ Last reviewed: 2026-06-28
 
 - Deterministic HTTP fixture tests cover auth headers, endpoint shape, and
   encoded console command queries.
+- `SdtdDiagnosticsProbe` provides a read-only readiness helper around server
+  info, stats, and allowed commands.
 - The legacy `ListPlayers` integration-style test is marked explicit because it
   requires a reachable LAN 7 Days to Die Web API. Normal validation uses
   deterministic HTTP fixtures.
@@ -27,6 +29,5 @@ Last reviewed: 2026-06-28
 
 - Replace the legacy live-server-tolerant test with explicit fixture and
   opt-in live smoke coverage.
-- Add a diagnostics/health helper for read-only server readiness.
 - Add an approval/audit boundary before exposing mutating bridge commands to
   operators, streams, or AI workflows.
