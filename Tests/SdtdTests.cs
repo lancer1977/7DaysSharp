@@ -17,6 +17,7 @@ public class SdtdTests
     }
 
     [Test]
+    [Explicit("Opt-in live server smoke; requires a reachable 7 Days to Die Web API at the configured LAN address.")]
   public async Task ListPlayers()
   {
       var result = await SdtdBridge.ListPlayers();

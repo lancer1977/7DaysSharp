@@ -15,9 +15,9 @@ Last reviewed: 2026-06-28
 
 - Deterministic HTTP fixture tests cover auth headers, endpoint shape, and
   encoded console command queries.
-- The legacy `ListPlayers` integration-style test still tolerates connection
-  failures because the bridge returns exception text. Keep it as legacy signal
-  until a later issue replaces it with explicit opt-in live smoke.
+- The legacy `ListPlayers` integration-style test is marked explicit because it
+  requires a reachable LAN 7 Days to Die Web API. Normal validation uses
+  deterministic HTTP fixtures.
 - `dotnet list RconSharp.slnx package --outdated` reports no package updates
   from the configured sources.
 - DevStudio validation finds required repo-shape items; recommended project
