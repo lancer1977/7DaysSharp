@@ -20,6 +20,8 @@ Last reviewed: 2026-06-28
 - `SdtdCommandApprovalPolicy` classifies raw console commands and provides a
   deny/dry-run/approval-required/approved decision before callers execute
   mutating bridge commands.
+- `SdtdActivityEventNormalizer` maps log and Web UI update DTOs into stable
+  activity events while preserving unsupported rows as `unknown`.
 - The legacy `ListPlayers` integration-style test is marked explicit because it
   requires a reachable LAN 7 Days to Die Web API. Normal validation uses
   deterministic HTTP fixtures.

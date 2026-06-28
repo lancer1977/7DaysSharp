@@ -58,3 +58,14 @@ before calling `ExecuteConsoleCommandAsync` or bridge helpers. Unknown and
 lifecycle commands are denied by default; moderation, spawn, world, movement,
 progression, player-effect, and communication commands require approval unless
 the caller is only doing a dry run.
+
+## Activity Events
+
+```csharp
+var events = SdtdActivityEventNormalizer.FromLog(logResponse);
+var update = SdtdActivityEventNormalizer.FromWebUiUpdates(updateResponse);
+```
+
+The normalizer maps player join/leave, chat, command output, and Web UI update
+snapshots into stable event kinds. Unsupported log rows are preserved as
+`unknown` events so consumers can inspect them later.
