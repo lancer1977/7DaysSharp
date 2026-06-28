@@ -10,6 +10,7 @@ This repo is a shared package/legacy wrapper, not a runtime lane or support home
 - [Roadmap Index](./roadmaps/README.md)
 - [Release Runbook](./release-runbook.md)
 - [Modding Capability Profile](./features/modding-capability-profile.md)
+- [Native-Hook Capability Research](./research/native-hook-capabilities.md)
 
 ## Roadmap
 

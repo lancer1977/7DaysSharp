@@ -65,6 +65,8 @@ Mutating command bridge:
 - Direct save mutation is not implemented here.
 - Stream-chat controlled player effects are not production-enabled.
 - AI-command execution is not production-enabled.
+- Native-hook ownership and validation requirements are documented in
+  `../research/native-hook-capabilities.md`.
 
 ## Follow-Up Implementation Epics
 
@@ -74,4 +76,4 @@ Generated from this profile by `#2`:
 - `#8` Diagnostics/health helper for read-only server readiness. Closed by `SdtdDiagnosticsProbe`.
 - `#9` Command approval/audit boundary before exposing mutating bridge methods. Closed by `SdtdCommandApprovalPolicy`.
 - `#10` Event normalization for log/Web UI update streams. Closed by `SdtdActivityEventNormalizer`.
-- `#11` Native-hook research for capabilities the Web API cannot support safely.
+- `#11` Native-hook research for capabilities the Web API cannot support safely. Closed by `docs/research/native-hook-capabilities.md`.
