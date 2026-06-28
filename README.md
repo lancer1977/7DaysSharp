@@ -41,3 +41,20 @@ var report = await new SdtdDiagnosticsProbe(api).CheckReadinessAsync();
 The diagnostics probe calls only read-only endpoints: server info, stats, and
 allowed commands. It reports auth, HTTP, parse, timeout, and connection failures
 without issuing console commands.
+
+## Command Approval Boundary
+
+```csharp
+var decision = SdtdCommandApprovalPolicy.Evaluate(new SdtdCommandApprovalRequest(
+    "spawnentity 171 zombieBoe",
+    Approved: false,
+    DryRun: true,
+    Actor: "stream"));
+```
+
+`SdtdBridge` wraps mutating console commands. Chat, AI, stream, and unattended
+operator surfaces should evaluate commands with `SdtdCommandApprovalPolicy`
+before calling `ExecuteConsoleCommandAsync` or bridge helpers. Unknown and
+lifecycle commands are denied by default; moderation, spawn, world, movement,
+progression, player-effect, and communication commands require approval unless
+the caller is only doing a dry run.

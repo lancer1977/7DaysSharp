@@ -23,11 +23,11 @@ runtime plan.
 | Health | observed | `SdtdDiagnosticsProbe`, `GetServerInfoAsync`, `GetStatsAsync`, `GetAllowedCommandsAsync` | Package has a read-only diagnostics helper for server readiness. |
 | Snapshot | observed | `GetStatsAsync`, `GetServerInfoAsync`, `GetWebUIUpdatesAsync`, `GetPlayersLocationAsync` | Read-only snapshot data is represented by typed DTOs. |
 | Activity events | observed | `GetLogAsync`, `GetWebUIUpdatesAsync`, `LogLine` | Log/update polling exists; event normalization is not implemented. |
-| Communication | approval-required | `SdtdBridge.Say` via `executeconsolecommand` | Chat output mutates the live server and needs operator approval/audit in consumers. |
-| Player effects | approval-required | `KickPlayer`, `BanPlayer`, `UnbanPlayer`, `Buff`, `Debuff` | Moderation and buff/debuff commands are mutating and must stay gated. |
-| Movement | approval-required | `Teleport` | Live teleport is powerful and needs explicit approval plus audit trail. |
-| Entity/event spawns | approval-required | `SpawnEntity`, `SpawnScouts`, `SpawnHorde` | Spawn commands should not be exposed directly to AI or stream chat. |
-| World/environment | approval-required | `SetTime`, `Weather`, `Shutdown` | World and lifecycle commands require operator-only controls. |
+| Communication | approval-required | `SdtdCommandApprovalPolicy`, `SdtdBridge.Say` via `executeconsolecommand` | Chat output mutates the live server and needs operator approval/audit in consumers. |
+| Player effects | approval-required | `SdtdCommandApprovalPolicy`, `KickPlayer`, `BanPlayer`, `UnbanPlayer`, `Buff`, `Debuff` | Moderation and buff/debuff commands are mutating and must stay gated. |
+| Movement | approval-required | `SdtdCommandApprovalPolicy`, `Teleport` | Live teleport is powerful and needs explicit approval plus audit trail. |
+| Entity/event spawns | approval-required | `SdtdCommandApprovalPolicy`, `SpawnEntity`, `SpawnScouts`, `SpawnHorde` | Spawn commands should not be exposed directly to AI or stream chat. |
+| World/environment | approval-required | `SdtdCommandApprovalPolicy`, `SetTime`, `Weather`, `Shutdown` | World commands require approval; lifecycle shutdown is denied by default. |
 | Inventory/progression | read-only incomplete | `GetPlayerInventoryAsync`, `GetPlayerInventoriesAsync`, `GiveQuest` | Inventory read models exist; quest granting is mutating and approval-required. |
 | Presentation | deferred | none in this package | Presentation belongs in support overlays, dashboards, or stream surfaces. |
 | Custom events | deferred | none in this package | Would require consumer-side event normalization. |
@@ -72,6 +72,6 @@ Generated from this profile by `#2`:
 
 - `#7` Deterministic HTTP fixture tests for API client requests and DTO parsing.
 - `#8` Diagnostics/health helper for read-only server readiness. Closed by `SdtdDiagnosticsProbe`.
-- `#9` Command approval/audit boundary before exposing mutating bridge methods.
+- `#9` Command approval/audit boundary before exposing mutating bridge methods. Closed by `SdtdCommandApprovalPolicy`.
 - `#10` Event normalization for log/Web UI update streams.
 - `#11` Native-hook research for capabilities the Web API cannot support safely.

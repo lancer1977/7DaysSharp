@@ -17,6 +17,9 @@ Last reviewed: 2026-06-28
   encoded console command queries.
 - `SdtdDiagnosticsProbe` provides a read-only readiness helper around server
   info, stats, and allowed commands.
+- `SdtdCommandApprovalPolicy` classifies raw console commands and provides a
+  deny/dry-run/approval-required/approved decision before callers execute
+  mutating bridge commands.
 - The legacy `ListPlayers` integration-style test is marked explicit because it
   requires a reachable LAN 7 Days to Die Web API. Normal validation uses
   deterministic HTTP fixtures.
@@ -29,5 +32,4 @@ Last reviewed: 2026-06-28
 
 - Replace the legacy live-server-tolerant test with explicit fixture and
   opt-in live smoke coverage.
-- Add an approval/audit boundary before exposing mutating bridge commands to
-  operators, streams, or AI workflows.
+- Add consumer-side audit logging around approved mutating command execution.
