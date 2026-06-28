@@ -1,12 +1,16 @@
-name: change-me
-repo_root: change-me
+name: api-7dayssharp
+repo_root: /mnt/data/lancer1977/code/Api.7DaysSharp
 
-languages: []
-frameworks: []
+languages:
+  - csharp
+frameworks:
+  - dotnet
 
 ci:
-  build: []
-  test: []
+  build:
+    - dotnet build RconSharp.slnx --configuration Release --no-restore
+  test:
+    - dotnet test RconSharp.slnx --configuration Release --no-restore --no-build --verbosity normal
 
 devstudio:
   runtime_model: three-agent

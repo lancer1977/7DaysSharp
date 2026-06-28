@@ -20,3 +20,14 @@ Copy the script into a product repo when you want a simple local command that:
 - The script is intentionally lightweight so repos can copy it and adapt the target path.
 - If ReportGenerator is installed, the script will emit an HTML summary under the report directory.
 - Repos with more advanced needs can wrap this command in CI or a repo-local task file.
+
+## Repo Commands
+
+```sh
+scripts/validate.sh
+scripts/smoke-package.sh
+```
+
+- `validate.sh` restores, builds, tests, and packs the package smoke artifact.
+- `smoke-package.sh` rebuilds the package artifact and fails if no `.nupkg` is
+  produced.

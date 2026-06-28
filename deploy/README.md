@@ -2,6 +2,10 @@
 
 This folder captures reusable default-deploy baselines for new project repos.
 
+For `Api.7DaysSharp`, these files are reference templates only. The canonical
+release/deploy lane is the package runbook in `../docs/release-runbook.md`; live
+7 Days to Die server deployment belongs in paired support/runtime repositories.
+
 The original template is tuned to the .NET/Traefik pattern used by the dev-forge workbench example, but the shape is meant to be copied and adapted per product repo.
 
 Use it when you need a repeatable starting point for:

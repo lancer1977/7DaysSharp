@@ -17,3 +17,15 @@ A simple C# wrapper based on work by CatalysmsServerManager. Keep active runtime
 - [Docs Index](./docs/README.md)
 - [Feature Index](./docs/features/README.md)
 - [Roadmap Index](./docs/roadmaps/README.md)
+- [Release Runbook](./docs/release-runbook.md)
+
+## Validation
+
+```sh
+scripts/validate.sh
+scripts/smoke-package.sh
+```
+
+`scripts/validate.sh` restores, builds, tests, and creates a local package smoke
+artifact. `scripts/smoke-package.sh` is the release/deploy smoke gate for this
+package repo.
