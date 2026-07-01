@@ -6,3 +6,4 @@ Feature documentation for 7DaysSharp is consolidated in the repository README fo
 
 - [Repository README](../README.md)
 - [Modding Capability Profile](./modding-capability-profile.md)
+- [Version Coverage Map](./version-coverage-map.md)

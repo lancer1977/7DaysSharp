@@ -1,8 +1,6 @@
 # 7DaysSharp Roadmaps
 
-Roadmap documentation for 7DaysSharp lives here.
+This local planning file has been migrated. GitHub Issues are the canonical tracker.
 
-## Active Roadmaps
-
-- [Version 1 roadmap](../roadmap/v1/README.md)
-- [Implementation Epics](./implementation-epics.md)
+Canonical GitHub issue: https://github.com/lancer1977/7DaysSharp/issues/13
+Original source kind: roadmap

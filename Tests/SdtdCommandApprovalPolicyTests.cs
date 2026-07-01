@@ -79,4 +79,24 @@ public sealed class SdtdCommandApprovalPolicyTests
             Assert.That(result.Risk, Is.EqualTo(SdtdCommandRisks.Communication));
         });
     }
+
+    [Test]
+    public void VersionCoverageMap_TagsEstablishedPackageLayers()
+    {
+        var repoRoot = TestContext.CurrentContext.TestDirectory;
+        while (repoRoot is not null && !File.Exists(Path.Combine(repoRoot, "README.md")))
+        {
+            repoRoot = Directory.GetParent(repoRoot)?.FullName;
+        }
+
+        Assert.That(repoRoot, Is.Not.Null);
+
+        var coverage = File.ReadAllText(Path.Combine(repoRoot!, "docs", "features", "version-coverage-map.md"));
+
+        Assert.That(coverage, Does.Contain("established_versions: [V2, V3]"));
+        Assert.That(coverage, Does.Contain("not_applicable_versions: [V0, V1]"));
+        Assert.That(coverage, Does.Contain("blocked_versions: [V5]"));
+        Assert.That(coverage, Does.Contain("dry-run never executes a mutating command"));
+        Assert.That(coverage, Does.Contain("production mutation blocked"));
+    }
 }

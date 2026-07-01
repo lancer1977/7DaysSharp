@@ -18,6 +18,7 @@ A simple C# wrapper based on work by CatalysmsServerManager. Keep active runtime
 - [Feature Index](./docs/features/README.md)
 - [Roadmap Index](./docs/roadmaps/README.md)
 - [Release Runbook](./docs/release-runbook.md)
+- [Version Coverage Map](./docs/features/version-coverage-map.md)
 
 ## Validation
 
